@@ -1,0 +1,14 @@
+.minhadiv {
+    text-align: center;
+}
+
+body {
+    background-color: rgb(142, 175, 224);
+}
+
+.answers * {
+    width: 400px;
+    height: 20px;
+    display: inline-block;
+    background-color: #EBE6E5;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale-1.0">
+        <title>Fun with flags!</title>
+        <style>
+            .minhadiv {
+                text-align: center;
+            }
+
+            body {
+                background-color: rgb(0,250,154);
+            }
+
+            .answers * {
+                width: 400px;
+                height: 20px;
+                display: inline-block;
+                background-color: #EBE6E5;
+            }
+
+            
+
+
+        </style>
+    </head>
+    <body>
+        <div class="minhadiv">
+            <h1>Fun with flags!</h1>
+            <p>Can you find out for what country that flag belong? Give a try!</p>
+            <img src="./flag.jpg" with="50px" height="300">
+            <br>
+            <br>
+            <br>
+            <form id="formulario">
+                <div class="textInput">
+                    <label for="textInput"><Strong>Country</Strong></label>
+                    <input type="text" name="country" id="country" placeholder="Type a country name" required>
+                    <input type="button" id="myButton" onclick="incrementValue()" value="Give a try" />
+                </div>
+            </form>
+            <ol class='answers'>
+                <p id="primeiraTentativa">Teste</p>
+                <br>
+                <p id="segundaTentativa">Teste</p>
+                <br>
+                <p id="terceiraTentativa">Teste</p>
+                <br>
+                <p id="quartaTentativa">Teste</p>
+                <br>
+                <p id="quintaTentativa">Teste</p>
+            </ol>
+            
+        </div>
+        <script>
+            let form = document.getElementById('formulario')
+            var count = 0
+
+            let myButton = document.getElementById('country');
+
+            myButton.addEventListener('keypress', function(event) {
+                if(event.key === "Enter")
+                {
+                    console.log('Apertou enter')
+                    document.getElementById('myButton').click();
+                    event.preventDefault();
+                }
+                
+
+                
+            })
+
+            function checkCounter(count)
+            {
+                let text = window.document.getElementById('country').value
+                if(count == 1)
+                {
+                    let parap = document.getElementById("primeiraTentativa")
+                    parap.innerHTML = text; 
+                }
+                    
+            }
+
+            function printCount(count)
+            {
+                let text = window.document.getElementById('country').value
+
+                if(count == 1)
+                {
+                    let parap = document.getElementById("primeiraTentativa")
+                    parap.innerHTML = text; 
+                }
+
+                if(count == 2)
+                {   
+                    let parap = document.getElementById("segundaTentativa")
+                    parap.innerHTML = text; 
+                }
+
+                if(count == 3)
+                {   
+                    let parap = document.getElementById("terceiraTentativa")
+                    parap.innerHTML = text; 
+                }
+
+                if(count == 4)
+                {   
+                    let parap = document.getElementById("quartaTentativa")
+                    parap.innerHTML = text; 
+                }
+
+                if(count == 5)
+                {   
+                    console.log('Numero maximo de tentativas permitidas!')
+                    let parap = document.getElementById("quintaTentativa")
+                    parap.innerHTML = text; 
+                }
+            }
+
+            function incrementValue()
+            {
+                let text = window.document.getElementById('country').value
+                console.log(text)
+                if(text === 'Brazil')
+                {
+                    console.log('ACERTOU!')
+                }
+                else
+                {
+                    console.log('ERROU!')
+                }
+
+
+                count++
+                console.log('Incrementando..')
+                console.log(count)
+
+                printCount(count)
+            }
+
+        </script>
+    </body>
+</html>
